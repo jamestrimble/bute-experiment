@@ -25,7 +25,7 @@ cp -r Laakeri Laakeri-mini
 # Laakeri-mini has 0.001 seconds of preprocessing
 awk '{print} /double pp_time = / {print "pp_time = 0.001; if (false)"}' Laakeri-mini/src/main.cpp  > tmp.cpp
 mv tmp.cpp Laakeri-mini/src/main.cpp
-(cd Laakeri/src && cmake . && make -j8)
-(cd Laakeri-mini/src && cmake . && make -j8)
+(cd Laakeri/src && g++ -o exact -std=c++11 -O3 -flto -Wall -Wextra -Wshadow -g -Wfatal-errors -Wno-sign-compare -Wno-literal-suffix -fPIC -march=native -static *.cpp)
+(cd Laakeri-mini/src && g++ -o exact -std=c++11 -O3 -flto -Wall -Wextra -Wshadow -g -Wfatal-errors -Wno-sign-compare -Wno-literal-suffix -fPIC -march=native -static *.cpp)
 
 mv treedepth-solver jt-top-down
