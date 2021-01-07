@@ -2,9 +2,7 @@ program-output/
 results/
 tmp/
 tmp.*
-instance-lists/
 plots/
-
 programs/bute
 programs/jt-top-down
 programs/Laakeri

@@ -1,0 +1,11 @@
+standard squaregrid5
+standard squaregrid6
+random random16-9-9
+random random16-9-10
+famous Robertson
+famous Shrikhande
+famous Sousselier
+famous Tietze
+famous tri
+famous Wagner
+famous Watsin
