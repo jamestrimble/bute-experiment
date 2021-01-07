@@ -1,0 +1,14 @@
+program-output/
+results/
+tmp/
+tmp.*
+instance-lists/
+plots/
+
+programs/bute
+programs/jt-top-down
+programs/Laakeri
+programs/Laakeri-mini
+programs/nauty27r1
+programs/nauty27r1.tar.gz
+programs/run-jt-top-down
