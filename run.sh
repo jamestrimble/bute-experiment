@@ -30,6 +30,8 @@ if [ $1 = "run" ]; then
 fi
 
 if [ $1 = "summarise" ]; then
+    ./find_optima.sh
+
     rm -rf results
     mkdir -p results
     rm -rf plots
