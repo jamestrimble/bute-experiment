@@ -1,0 +1,5 @@
+grep -v '^c' | ./programs/jt-top-down/solve | tac | \
+awk '
+  /Depth/ {print $2}
+  /Parents/ {for (i=2; i<=NF; i++) print $i}
+'

@@ -2,19 +2,23 @@
 
 set -euf -o pipefail
 
-#rm -f nauty27r1.tar.gz
+rm -f nauty27r1.tar.gz
 rm -rf nauty27r1
 rm -rf treedepth-solver
 rm -rf bute
 rm -rf pace2020-treedepth-exact
+rm -rf jt-top-down
+rm -rf Laakeri
+rm -rf Laakeri-mini
 
-#wget https://pallini.di.uniroma1.it/nauty27r1.tar.gz
+wget https://pallini.di.uniroma1.it/nauty27r1.tar.gz
 tar xvf nauty27r1.tar.gz
 (cd nauty27r1 && ./configure && make -j8)
 
 git clone https://github.com/jamestrimble/treedepth-solver
 cp nauty27r1/nauty.h nauty27r1/nauty.a treedepth-solver
 (cd treedepth-solver && make -j8)
+mv treedepth-solver jt-top-down
 
 git clone https://github.com/jamestrimble/bute
 (cd bute && ./get-Tamaki-code && make)
@@ -27,5 +31,3 @@ awk '{print} /double pp_time = / {print "pp_time = 0.001; if (false)"}' Laakeri-
 mv tmp.cpp Laakeri-mini/src/main.cpp
 (cd Laakeri/src && g++ -o exact -std=c++11 -O3 -flto -Wall -Wextra -Wshadow -g -Wfatal-errors -Wno-sign-compare -Wno-literal-suffix -fPIC -march=native -static *.cpp)
 (cd Laakeri-mini/src && g++ -o exact -std=c++11 -O3 -flto -Wall -Wextra -Wshadow -g -Wfatal-errors -Wno-sign-compare -Wno-literal-suffix -fPIC -march=native -static *.cpp)
-
-mv treedepth-solver jt-top-down
