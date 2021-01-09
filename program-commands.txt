@@ -1,4 +1,4 @@
-bute java -XmxJAVAMEMMAX -XmsJAVAMEMSTART -Xss10m -cp "programs/bute/bin" bute.Main
+bute java -XmxJAVAMEMMAX -XmsJAVAMEMSTART -Xss10m -cp "programs/bute/bin" bute.Main --print-stats
 laakeri ./programs/Laakeri/src/exact
 laakeri-mini ./programs/Laakeri-mini/src/exact
 jt-top-down ./programs/run-jt-top-down
