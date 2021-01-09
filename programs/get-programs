@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euf -o pipefail
+set -eu -o pipefail
 
 rm -f nauty27r1.tar.gz
 rm -rf nauty27r1
