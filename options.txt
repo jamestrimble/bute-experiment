@@ -1,4 +1,4 @@
-java-start-memory 4g
-java-max-memory 4g
-memory-limit-kb 8000000
-time-limit-seconds 5
+java-start-memory 32g
+java-max-memory 32g
+memory-limit-kb 67108864
+time-limit-seconds 1000
