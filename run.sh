@@ -48,7 +48,7 @@ if [ $1 = "summarise" ]; then
             awk -v family=${family} -v f=$f \
                     -v n=$(cat instances/$f.gr | grep -v '^c' | head -n1 | cut -d' ' -f3) \
                     -v m=$(cat instances/$f.gr | grep -v '^c' | head -n1 | cut -d' ' -f4) \
-             '{x[i++] = $1} END {printf "%s %s %s %s", family, f, n, m; for (j=0;j<i; j++) printf " %s", x[j]; print}'
+             '{x[i++] = $1} END {printf "%s %s %s %s", family, f, n, m; for (j=0;j<i; j++) printf " %s", x[j]; print ""}'
     done | tee -a results/results.txt
 
     cat results/results.txt | awk -f scripts/tidy-results.awk -v timelimit=${TIMELIMIT} -v OFS="\t" | sort -g -k3,4 | sort -s -k1,1 > results/results-formatted.txt
